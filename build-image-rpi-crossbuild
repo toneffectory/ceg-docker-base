@@ -1,4 +1,5 @@
 #!/bin/bash
 DOCKERFILE=Dockerfile-rpi-crossbuild
 TAG=rpi-latest
-docker build -f $DOCKERFILE --force-rm=true --rm=true -t apendergast/crypto-exchanges-gateway-docker-base:$TAG .
+TIMESTAMP=`date +"%Y%m%d%H%M%S"`
+docker build -f $DOCKERFILE --force-rm=true --rm=true --build-arg TIMESTAMP=$TIMESTAMP -t apendergast/ceg-docker-base:$TAG .

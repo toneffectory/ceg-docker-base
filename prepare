@@ -1,0 +1,11 @@
+#!/bin/bash
+# This file is supposed to be executed in the container
+COUNT=`cat /proc/1/cgroup | awk -F':' '{print $3}' | grep '^/docker' | wc -l`
+if [ $COUNT -eq 0 ]
+then
+    echo "Script should be run inside a docker container"
+    exit 1
+fi
+# install heavy packages used by ui
+mkdir -p /root/dummy/ui && cd /root/dummy/ui && \
+    npm install webpack webpack-dev-server node-sass babel-core

@@ -1,5 +1,8 @@
 FROM resin/armhf-alpine:edge
 RUN [ "cross-build-start" ]
 RUN apk --update add bash git python build-base nodejs nodejs-npm
-RUN npm install -ddd --unsafe-perm -g webpack webpack-dev-server node-sass babel-core
+ARG TIMESTAMP=0
+RUN echo "$TIMESTAMP"
+COPY prepare /tmp
+RUN /tmp/prepare
 RUN [ "cross-build-end" ]
