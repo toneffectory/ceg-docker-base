@@ -7,8 +7,8 @@ then
     exit 1
 fi
 # install heavy packages used by gateway
-mkdir -p /root/dummy && cd /root/dummy && \
-    npm install --unsafe-perm sqlite3 bufferutil
+mkdir -p /root/dummy/gateway && cd /root/dummy/gateway && \
+    npm install -ddd --unsafe-perm sqlite3 bufferutil
 # install heavy packages used by ui
 mkdir -p /root/dummy/ui && cd /root/dummy/ui && \
-    npm install --unsafe-perm webpack webpack-dev-server node-gyp node-sass babel-core
+    npm install -ddd --unsafe-perm webpack webpack-dev-server node-gyp node-sass babel-core
