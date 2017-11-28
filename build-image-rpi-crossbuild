@@ -1,0 +1,4 @@
+#!/bin/bash
+DOCKERFILE=Dockerfile-rpi-crossbuild
+TAG=rpi-latest
+docker build -f $DOCKERFILE --force-rm=true --rm=true -t apendergast/crypto-exchanges-gateway-docker-base:$TAG .

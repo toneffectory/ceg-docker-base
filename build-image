@@ -1,0 +1,4 @@
+#!/bin/bash
+DOCKERFILE=Dockerfile
+TAG=latest
+docker build -f $DOCKERFILE --force-rm=true --rm=true -t apendergast/crypto-exchanges-gateway-docker-base:$TAG .

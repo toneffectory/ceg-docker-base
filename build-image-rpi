@@ -1,0 +1,10 @@
+#!/bin/bash
+DOCKERFILE=Dockerfile-rpi
+TAG=rpi-latest
+ARCH=`uname -a | awk '{print $13}'`
+if ! [[ "$ARCH" == armv* ]]
+then
+    echo "Script should be run on an armv architecture"
+    exit 1
+fi
+docker build -f $DOCKERFILE --force-rm=true --rm=true -t apendergast/crypto-exchanges-gateway-docker-base:$TAG .
