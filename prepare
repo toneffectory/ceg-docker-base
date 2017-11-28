@@ -8,4 +8,4 @@ then
 fi
 # install heavy packages used by ui
 mkdir -p /root/dummy/ui && cd /root/dummy/ui && \
-    npm install webpack webpack-dev-server node-sass babel-core
+    npm install webpack webpack-dev-server node-gyp node-sass babel-core
