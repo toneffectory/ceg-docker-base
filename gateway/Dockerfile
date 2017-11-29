@@ -1,5 +1,4 @@
-FROM alpine:edge
-RUN apk --update add bash git python build-base nodejs nodejs-npm
+FROM apendergast/alpine-node:builder-latest
 ARG TIMESTAMP=0
 RUN echo "$TIMESTAMP"
 COPY prepare /tmp

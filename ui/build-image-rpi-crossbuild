@@ -2,4 +2,4 @@
 DOCKERFILE=Dockerfile-rpi-crossbuild
 TAG=rpi-ui-latest
 TIMESTAMP=`date +"%Y%m%d%H%M%S"`
-docker build -f $DOCKERFILE --force-rm=true --rm=true --build-arg TIMESTAMP=$TIMESTAMP -t apendergast/ceg-docker-base:$TAG .
+docker build -f $DOCKERFILE --pull --force-rm=true --rm=true --build-arg TIMESTAMP=$TIMESTAMP -t apendergast/ceg-docker-base:$TAG .

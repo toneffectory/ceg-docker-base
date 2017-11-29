@@ -1,6 +1,5 @@
-FROM resin/armhf-alpine:edge
+FROM apendergast/alpine-node:rpi-builder-latest
 RUN [ "cross-build-start" ]
-RUN apk --update add bash git python build-base nodejs nodejs-npm
 ARG TIMESTAMP=0
 RUN echo "$TIMESTAMP"
 COPY prepare /tmp
